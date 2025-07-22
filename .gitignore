@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+venv/
+env/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Project files
+rag_pdf_chatbot/.env
+rag_pdf_chatbot/chroma_db/chroma.sqlite3
+
+# OS
+.DS_Store
+Thumbs.db

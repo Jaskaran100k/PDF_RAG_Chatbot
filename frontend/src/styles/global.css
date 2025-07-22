@@ -1,0 +1,227 @@
+/* ===== GLOBAL STYLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --bg: #10172b;
+  --sidebar-bg: #18213a;
+  --card-bg: #1e233b;
+  --fg: #f3f6fa;
+  --fg-light: #b0b8d1;
+  --btn-border: #2563eb;
+  --btn-delete: #ef4444;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  font-family: 'Playfair Display', 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  letter-spacing: 0.01em;
+  font-size: 1rem;
+}
+
+button {
+  font-family: inherit;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(17, 24, 39, 0.9);
+  color: #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: rgba(31, 41, 55, 0.95);
+  color: #f9fafb;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+a {
+  color: var(--btn-border);
+}
+
+/* ===== DASHBOARD STYLES ===== */
+.dashboardBg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232b4a 0%, #1a2040 100%);
+  color: var(--fg);
+  font-family: 'Playfair Display', 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===== CARD STYLES ===== */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cardBox {
+  background: rgba(255,255,255,0.10);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px);
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cardBox:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+
+.cardContent {
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e0eaff;
+  margin-bottom: 0.5rem;
+}
+
+.cardMeta {
+  font-size: 0.9rem;
+  color: #b4c9ff;
+  margin-bottom: 0.25rem;
+}
+
+.cardActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.startChatBtn {
+  flex: 1;
+  background: rgba(17, 24, 39, 0.9);
+  color: #e5e7eb;
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.startChatBtn:hover {
+  background: rgba(31, 41, 55, 0.95);
+  color: #f9fafb;
+  border-color: rgba(107, 114, 128, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.deleteBtn {
+  flex: 1;
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.deleteBtn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  color: #fecaca;
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== MESSAGE AVATAR STYLES ===== */
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-avatar {
+  background: #6366f1;
+  color: #fff;
+}
+
+.bot-avatar {
+  background: #10b981;
+  color: #fff;
+}
+
+/* ===== TYPING INDICATOR ===== */
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #60a5fa;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 600px) {
+  nav button {
+    max-width: 80px;
+    min-width: 50px;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .dashboard, .chat-page {
+    padding: 1.5rem;
+  }
+  
+  .dashboardCard {
+    padding: 2rem;
+    min-width: 280px;
+  }
+  
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+} 

@@ -1,0 +1,21 @@
+# Django and REST API
+django
+djangorestframework
+django-cors-headers
+
+
+# LangChain + LLMs
+langchain
+langchain-community
+langchain-chroma
+langchain-groq
+langchain-huggingface
+pypdf
+
+
+# Embeddings
+sentence-transformers
+huggingface-hub
+
+# Utilities
+python-dotenv
