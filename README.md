@@ -1,6 +1,9 @@
 # 🤖 PDF RAG Chatbot
 <img width="1920" height="918" alt="image" src="https://github.com/user-attachments/assets/5efe3109-9298-4f47-8ece-4ffea5bb810f" />
 
+<img width="1856" height="914" alt="image" src="https://github.com/user-attachments/assets/323227d5-9e28-4feb-b474-971ad3253e71" />
+
+
 A Retrieval-Augmented Generation (RAG) chatbot that lets users upload PDFs and chat with an AI assistant powered by the documents’ content. Built with Django, LangChain, Chroma, and React.
 
 ---
